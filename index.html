@@ -46,6 +46,104 @@
             margin: 0px;
         }
     </style>
+        
+    <script>
+        
+    </script>
+        var x = 0;
+
+
+draw = function() {
+    background(48, 50, 74);
+    
+    fill(0,0,0);
+    ellipse(200,385,125,86); //cauldron body
+
+    fill(0,0,0);
+    ellipse(200,350,100,50); //cauldron lid
+
+    stroke(92,64,51);
+    strokeWeight(7.5);
+    line(145,284,172,339); //mixing stick
+
+    noStroke();
+    fill(92,64,51);
+    ellipse(145,284,15,15); //mixing stick ball
+
+    fill(255,0,255);
+    ellipse(200,350,90,40); //potion
+
+    fill(247, 188, 247); //bubbles
+    ellipse(223,343,15,10);
+    fill(247, 188, 247);
+    ellipse(208,343,7,5);
+    fill(247, 188, 247);
+    ellipse(219,353,7,5);
+
+    fill(245, 242, 245); //moon
+    ellipse(60,60,75,75);
+
+    fill(189, 189, 189); //moon spots
+    ellipse(45,53,22,25);
+    fill(189, 189, 189);
+    ellipse(45,73,12,11);
+    fill(189, 189, 189);
+    ellipse(64,56,13,14);
+
+    fill(248, 255, 184); //stars
+    ellipse(150,108,5,5);
+    fill(248, 255, 184);
+    ellipse(190,143,3,3);
+    fill(248, 255, 184);
+    ellipse(266,71,5,5);
+    fill(248, 255, 184);
+    ellipse(215,68,4,4);
+    fill(248, 255, 184);
+    ellipse(317,204,x,x);
+    
+    // Add one to each of the variables
+    x = x + 0.1;
+    fill(248, 255, 184);
+    ellipse(109,39,3,3);
+    fill(248, 255, 184);
+    ellipse(92,215,5,5);
+    fill(248, 255, 184);
+    ellipse(135,161,4,4);
+    fill(248, 255, 184);
+    ellipse(333,130,4,4);
+    fill(248, 255, 184);
+    ellipse(345,318,5,5);
+    fill(248, 255, 184);
+    ellipse(276,280,3,3);
+    fill(248, 255, 184);
+    ellipse(226,203,5,5);
+    fill(248, 255, 184);
+    ellipse(21,301,4,4);
+    fill(248, 255, 184);
+    ellipse(39,179,4,4);
+    fill(248, 255, 184);
+    ellipse(87,348,4,4);
+    fill(248, 255, 184);
+    ellipse(167,242,4,4);
+    fill(248, 255, 184);
+    ellipse(341,22,4,4);
+    fill(248, 255, 184);
+    ellipse(310,366,4,4);
+
+    mouseClicked = function() {
+        if (mouseX >= 150 && mouseX <= 250 &&
+            mouseY >= 325 && mouseY <= 375) {
+            playSound(getSound("rpg/water-bubble"));
+        }
+    };
+
+
+    if (x >= 5) {
+        x = 0;
+    
+    }
+    
+};
     </head>
     <body>
         <p id="ha"><br></p>
