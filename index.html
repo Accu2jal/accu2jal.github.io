@@ -1,138 +1,160 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Project: Blog</title>
+    <head>
+        <meta charset="utf-8">
+        <title>Project: Blog</title>
+    
     <style>
-      body {
-        margin: 0;
-        background: #000;
-      }
-      canvas {
-        display: block;
-        background-color: rgb(48, 50, 74);
-      }
-    </style>
-  </head>
-  <body>
-    <canvas id="canvas" width="400" height="400"></canvas>
-
-    <script>
-      const canvas = document.getElementById("canvas");
-      const ctx = canvas.getContext("2d");
-      let x = 0;
-
-      function drawCauldron() {
-        // Cauldron body
-        ctx.fillStyle = "black";
-        ctx.beginPath();
-        ctx.ellipse(200, 385, 62.5, 43, 0, 0, 2 * Math.PI);
-        ctx.fill();
-
-        // Cauldron lid
-        ctx.beginPath();
-        ctx.ellipse(200, 350, 50, 25, 0, 0, 2 * Math.PI);
-        ctx.fill();
-
-        // Mixing stick
-        ctx.strokeStyle = "rgb(92,64,51)";
-        ctx.lineWidth = 7.5;
-        ctx.beginPath();
-        ctx.moveTo(145, 284);
-        ctx.lineTo(172, 339);
-        ctx.stroke();
-
-        // Stick ball
-        ctx.fillStyle = "rgb(92,64,51)";
-        ctx.beginPath();
-        ctx.arc(145, 284, 7.5, 0, 2 * Math.PI);
-        ctx.fill();
-
-        // Potion
-        ctx.fillStyle = "rgb(255,0,255)";
-        ctx.beginPath();
-        ctx.ellipse(200, 350, 45, 20, 0, 0, 2 * Math.PI);
-        ctx.fill();
-      }
-
-      function drawMoonAndStars() {
-        // Moon
-        ctx.fillStyle = "rgb(245,242,245)";
-        ctx.beginPath();
-        ctx.arc(60, 60, 37.5, 0, 2 * Math.PI);
-        ctx.fill();
-
-        // Moon spots
-        ctx.fillStyle = "rgb(189,189,189)";
-        ctx.beginPath();
-        ctx.ellipse(45, 53, 11, 12.5, 0, 0, 2 * Math.PI);
-        ctx.fill();
-        ctx.beginPath();
-        ctx.ellipse(45, 73, 6, 5.5, 0, 0, 2 * Math.PI);
-        ctx.fill();
-        ctx.beginPath();
-        ctx.ellipse(64, 56, 6.5, 7, 0, 0, 2 * Math.PI);
-        ctx.fill();
-
-        // Stars
-        const starColor = "rgb(248,255,184)";
-        ctx.fillStyle = starColor;
-        const stars = [
-          [150, 108, 5],
-          [190, 143, 3],
-          [266, 71, 5],
-          [215, 68, 4],
-          [317, 204, x],
-          [109, 39, 3],
-          [92, 215, 5],
-          [135, 161, 4],
-          [333, 130, 4],
-          [345, 318, 5],
-          [276, 280, 3],
-          [226, 203, 5],
-          [21, 301, 4],
-          [39, 179, 4],
-          [87, 348, 4],
-          [167, 242, 4],
-          [341, 22, 4],
-          [310, 366, 4]
-        ];
-
-        stars.forEach(([sx, sy, r]) => {
-          ctx.beginPath();
-          ctx.arc(sx, sy, r, 0, 2 * Math.PI);
-          ctx.fill();
-        });
-      }
-
-      function draw() {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        ctx.fillStyle = "rgb(48,50,74)";
-        ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-        drawCauldron();
-        drawMoonAndStars();
-
-        x += 0.1;
-        if (x >= 5) x = 0;
-
-        requestAnimationFrame(draw);
-      }
-
-      canvas.addEventListener("click", function (e) {
-        const rect = canvas.getBoundingClientRect();
-        const mx = e.clientX - rect.left;
-        const my = e.clientY - rect.top;
-
-        // Check if clicked inside cauldron area
-        if (mx >= 150 && mx <= 250 && my >= 325 && my <= 375) {
-          console.log("✨ Bubble sound here ✨");
-          // You can play a real sound here if you want:
-          // new Audio('bubble.mp3').play();
+         #ha {
+            background-color:rgb(0, 274, 85);
+            margin: 0px;
         }
-      });
-
-      draw();
+        #hl {
+            background-color:rgb(0, 270, 110);
+            margin: 0px;
+        }
+        #hg {
+            background-color:rgb(0, 266, 135);
+            margin: 0px;
+        }
+        #hn {
+            background-color:rgb(0, 262, 160);
+            margin: 0px;
+        }
+        #hi {
+            background-color:rgb(0, 258, 185);
+            margin: 0px;
+        }
+        #he {
+            background-color:rgb(0, 254, 210);
+            margin: 0px;
+        }
+        #hr {
+            background-color:rgb(0, 250, 235);
+            margin: 0px;
+        }
+        #hv {
+            background-color:rgb(0, 246, 260);
+            margin: 0px;
+        }
+        #ht {
+            background-color:rgb(0, 242, 285);
+            margin: 0px;
+        }
+        #ho {
+            background-color:rgb(0, 238, 310);
+            margin: 0px;
+        }
+    </style>
+        
+    <script>
+        
     </script>
-  </body>
+        var x = 0;
+
+
+draw = function() {
+    background(48, 50, 74);
+    
+    fill(0,0,0);
+    ellipse(200,385,125,86); //cauldron body
+
+    fill(0,0,0);
+    ellipse(200,350,100,50); //cauldron lid
+
+    stroke(92,64,51);
+    strokeWeight(7.5);
+    line(145,284,172,339); //mixing stick
+
+    noStroke();
+    fill(92,64,51);
+    ellipse(145,284,15,15); //mixing stick ball
+
+    fill(255,0,255);
+    ellipse(200,350,90,40); //potion
+
+    fill(247, 188, 247); //bubbles
+    ellipse(223,343,15,10);
+    fill(247, 188, 247);
+    ellipse(208,343,7,5);
+    fill(247, 188, 247);
+    ellipse(219,353,7,5);
+
+    fill(245, 242, 245); //moon
+    ellipse(60,60,75,75);
+
+    fill(189, 189, 189); //moon spots
+    ellipse(45,53,22,25);
+    fill(189, 189, 189);
+    ellipse(45,73,12,11);
+    fill(189, 189, 189);
+    ellipse(64,56,13,14);
+
+    fill(248, 255, 184); //stars
+    ellipse(150,108,5,5);
+    fill(248, 255, 184);
+    ellipse(190,143,3,3);
+    fill(248, 255, 184);
+    ellipse(266,71,5,5);
+    fill(248, 255, 184);
+    ellipse(215,68,4,4);
+    fill(248, 255, 184);
+    ellipse(317,204,x,x);
+    
+    // Add one to each of the variables
+    x = x + 0.1;
+    fill(248, 255, 184);
+    ellipse(109,39,3,3);
+    fill(248, 255, 184);
+    ellipse(92,215,5,5);
+    fill(248, 255, 184);
+    ellipse(135,161,4,4);
+    fill(248, 255, 184);
+    ellipse(333,130,4,4);
+    fill(248, 255, 184);
+    ellipse(345,318,5,5);
+    fill(248, 255, 184);
+    ellipse(276,280,3,3);
+    fill(248, 255, 184);
+    ellipse(226,203,5,5);
+    fill(248, 255, 184);
+    ellipse(21,301,4,4);
+    fill(248, 255, 184);
+    ellipse(39,179,4,4);
+    fill(248, 255, 184);
+    ellipse(87,348,4,4);
+    fill(248, 255, 184);
+    ellipse(167,242,4,4);
+    fill(248, 255, 184);
+    ellipse(341,22,4,4);
+    fill(248, 255, 184);
+    ellipse(310,366,4,4);
+
+    mouseClicked = function() {
+        if (mouseX >= 150 && mouseX <= 250 &&
+            mouseY >= 325 && mouseY <= 375) {
+            playSound(getSound("rpg/water-bubble"));
+        }
+    };
+
+
+    if (x >= 5) {
+        x = 0;
+    
+    }
+    
+};
+    </head>
+    <body>
+        <p id="ha"><br></p>
+        <p id="hl"><br></p>
+        <p id="hg"><br></p>
+        <p id="hn"><br></p>
+        <p id="hi"><br></p>
+        <p id="he"><br></p>
+        <p id="hr"><br></p>
+        <p id="hv"><br></p>
+        <p id="ht"><br></p>
+        <p id="ho"><br></p>
+    </body>
 </html>
