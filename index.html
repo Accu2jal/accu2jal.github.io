@@ -66,12 +66,22 @@
             text-align: right;
             font-size: 10px;
         }
-        #thead {
+        th {
             font-size: 25px;
             font-weight: bold;
         }
-        #tbody {
+        td {
             font-size: 25px;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
         }
     </style>
     </head>
@@ -100,13 +110,13 @@
         <p>Choose the right option for your needs:<br><br></p>
         <table>
             <thead>
-                <tr id="thead">
+                <tr>
                     <th>Price</th>
                     <th>Range</th>
                     <th>Other Specs</th>
                 </tr>
             </thead>
-            <tbody id="tbody">
+            <tbody>
                 <tr>
                     <td>$10</td>
                     <td>20 feet</td>
